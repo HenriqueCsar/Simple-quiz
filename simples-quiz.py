@@ -51,6 +51,17 @@ class program:
             self.window_run_question.title('Quiz')
             self.window_run_question.geometry('700x400')
             self.window_run_question.resizable(height=0, width=0)
+
+
+            ###Buttons from run_question
+
+            self.button_run_question_
+
+
+
+
+
+
             self.window_run_question.mainloop()
 
 
@@ -68,7 +79,7 @@ class program:
             'answer': f'{_answer}'
             })
 
-        with open('data.txt', 'w') as out:
+        with open('data.quiz', 'w') as out:
             json.dump(self.data, out)
 
 
