@@ -40,12 +40,19 @@ class program:
 
 #####Run question
     def run_question(self):
-        self.app.destroy()
-        self.window_run_question = Tk()
-        self.window_run_question.title('Quiz')
-        self.window_run_question.geometry('700x400')
-        self.window_run_question.resizable(height=0, width=0)
-        self.window_run_question.mainloop()
+        try:
+            self.file = filedialog.askopenfilename(initialdir = "/", title='Selecione o Arquivo.quiz', filetypes=(("quiz files","*.quiz"),("all files","*.*")))
+        except:
+            print('Erro ao selecionar Arquivo')
+
+        if(self.file):
+            self.app.destroy()
+            self.window_run_question = Tk()
+            self.window_run_question.title('Quiz')
+            self.window_run_question.geometry('700x400')
+            self.window_run_question.resizable(height=0, width=0)
+            self.window_run_question.mainloop()
+
 
 
 
