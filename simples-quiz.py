@@ -9,16 +9,16 @@ class program:
 
         self.app = Tk()
         self.app.title('Simple Quiz')
-        self.app.geometry('230x150')
+        self.app.geometry('230x100')
         self.app.iconbitmap('icone.ico')
         self.app.configure(bg='#292f3b')
         self.app.resizable(height=0, width=0)
 
-        self.create_question = Button(self.app, text='Create question', fg='gray', bg='#292f3a',font='impact 20', command=self.gui_question)
-        self.create_question.pack()
+        self.create_question = Button(self.app, text='Create question', fg='gray', bg='#292f3a',font=' 20', command=self.gui_question)
+        self.create_question.place(x="20", y="10")
 
-        self.run_question = Button(self.app, text='Run question', fg='gray', bg='#292f3a',font='impact 20', command=self.run_question)
-        self.run_question.pack()
+        self.run_question = Button(self.app, text='Run question', fg='gray', bg='#292f3a',font=' 20', command=self.run_question)
+        self.run_question.place(x="20", y="50")
 
         self.app.mainloop()
 
