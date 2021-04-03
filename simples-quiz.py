@@ -1,6 +1,6 @@
 import json
 from tkinter import *
-from tkinter import filedialog
+from tkinter import filedialog, messagebox
 
 ####Gui
 class program:
@@ -32,6 +32,8 @@ class program:
         self.window_gui_question.title('Gui Question')
         self.window_gui_question.geometry('700x400')
         self.window_gui_question.resizable(height=0, width=0)
+        self.window_gui_question.iconbitmap('icone.ico')
+        self.window_gui_question.configure(bg='#292f3b')
         self.window_gui_question.mainloop()
 
 
@@ -40,16 +42,22 @@ class program:
 
 #####Run question
     def run_question(self):
+        import pygame
         try:
-            self.file = filedialog.askopenfilename(initialdir = "/", title='Selecione o Arquivo.quiz', filetypes=(("quiz files","*.quiz"),("all files","*.*")))
+            self.file = filedialog.askopenfilename(initialdir = "/", title='Selecione o Arquivo.quiz', filetypes=[(("Quiz files","*"))])
         except:
-            print('Erro ao selecionar Arquivo')
+            messagebox.showerror(title="Erro", message="Erro ao abrir o quiz")
 
         if(self.file):
             self.app.destroy()
             self.window_run_question = Tk()
             self.window_run_question.title('Quiz')
+            self.window_run_question.configure(bg='#292f3b')
+            self.window_run_question.iconbitmap('icone.ico')
             self.window_run_question.geometry('700x400')
+            pygame.mixer.init(1100)
+            pygame.mixer.music.load("music.mp3")
+            pygame.mixer.music.play(loops=0)
             self.window_run_question.resizable(height=0, width=0)
 
 
